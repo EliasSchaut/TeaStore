@@ -28,7 +28,7 @@
   "postCreateCommand": "kubectl version",
 
   // Use 'postStartCommand' to run commands after the container is created like starting minikube.
-  "postStartCommand": "minikube start",
+  "postStartCommand": "minikube start && helm install teastore examples/helm/ && kubectl port-forward teastore-webui-0 8080:8080",
 
   // Configure tool-specific properties.
   "customizations" : {
